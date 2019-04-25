@@ -80,7 +80,7 @@ public class TestAB {
     int i = 1;
     System.out.print(0);
     while (textLine != null) {
-      if (textLine == null || textLine.length() < 1)
+      if (textLine.length() < 1)
         textLine = MagicStrings.null_input;
       if (textLine.equals("q"))
         System.exit(0);
@@ -148,15 +148,16 @@ public class TestAB {
     try {
       FileInputStream fstream = new FileInputStream(filename);
       // Get the object
-      BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
-      String strLine;
-      // Read File Line By Line
-      int count = 0;
-      while ((strLine = br.readLine()) != null && count++ < limit) {
-        System.out.println("Human: " + strLine);
+      try (BufferedReader br = new BufferedReader(new InputStreamReader(fstream))) {
+        String strLine;
+        // Read File Line By Line
+        int count = 0;
+        while ((strLine = br.readLine()) != null && count++ < limit) {
+          System.out.println("Human: " + strLine);
 
-        String response = chatSession.multisentenceRespond(strLine);
-        System.out.println(MagicStrings.robot_name + ": " + response);
+          String response = chatSession.multisentenceRespond(strLine);
+          System.out.println(MagicStrings.robot_name + ": " + response);
+        }
       }
     } catch (Exception ex) {
       ex.printStackTrace();
