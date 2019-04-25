@@ -49,7 +49,7 @@ public class Main {
    *  reads only those files and if aiml files are changed the csv files are outdated.
    */
   private static void regenerateTmpFiles() {
-    Bot bot = new Bot("botName", MagicStrings.root_path, "aiml2csv");
+    Bot bot = new Bot("alice2", MagicStrings.root_path, "aiml2csv");
     convert(bot, "aiml2csv");
   }
 
