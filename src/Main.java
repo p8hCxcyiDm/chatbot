@@ -12,10 +12,27 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-import org.alicebot.ab.*;
-
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashMap;
+
+import org.alicebot.ab.AB;
+import org.alicebot.ab.AIMLProcessor;
+import org.alicebot.ab.Bot;
+import org.alicebot.ab.Category;
+import org.alicebot.ab.Chat;
+import org.alicebot.ab.ChatTest;
+import org.alicebot.ab.Graphmaster;
+import org.alicebot.ab.MagicBooleans;
+import org.alicebot.ab.MagicNumbers;
+import org.alicebot.ab.MagicStrings;
+import org.alicebot.ab.Nodemapper;
+import org.alicebot.ab.PCAIMLProcessorExtension;
+import org.alicebot.ab.TestAB;
+import org.alicebot.ab.Verbs;
 
 public class Main {
 
@@ -208,7 +225,7 @@ public class Main {
         System.out.println("Human: " + strLine);
 
         String response = chatSession.multisentenceRespond(strLine);
-        System.out.println("Robot: " + response);
+        System.out.println(MagicStrings.robot_name + ": " + response);
       }
     } catch (Exception ex) {
       ex.printStackTrace();

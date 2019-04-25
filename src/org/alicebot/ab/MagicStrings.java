@@ -16,6 +16,8 @@ package org.alicebot.ab;
  * Global values for many strings in Program AB
  */
 public class MagicStrings {
+  public static final String robot_name = "Sowabot";
+
   // General global strings
   public static String program_name_version = "Program AB 0.0.6.26 beta -- AI Foundation Reference AIML 2.1 implementation";
 
