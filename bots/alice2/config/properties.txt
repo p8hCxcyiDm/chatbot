@@ -1,5 +1,5 @@
 url:http://www.alicebot.org
-name:ALICE 2.0
+name:Sowbot
 firstname:Artificial
 middlename:Internet
 lastname:Entity
