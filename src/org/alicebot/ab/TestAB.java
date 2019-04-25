@@ -1,10 +1,10 @@
 package org.alicebot.ab;
 
-import org.alicebot.ab.utils.IOUtils;
-
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+
+import org.alicebot.ab.utils.IOUtils;
 
 /**
  * Created by User on 5/13/2014.
@@ -47,7 +47,7 @@ public class TestAB {
           response = response.replace("&lt;", "<");
         while (response.contains("&gt;"))
           response = response.replace("&gt;", ">");
-        IOUtils.writeOutputTextLine("Robot", response);
+        IOUtils.writeOutputTextLine(MagicStrings.robot_name, response);
         // System.out.println("Learn graph:");
         // bot.learnGraph.printgraph();
       }
@@ -63,7 +63,7 @@ public class TestAB {
     String request = "Hello.  How are you?  What is your name?  Tell me about yourself.";
     String response = chatSession.multisentenceRespond(request);
     System.out.println("Human: " + request);
-    System.out.println("Robot: " + response);
+    System.out.println(MagicStrings.robot_name + ": " + response);
   }
 
   public static void runTests(Bot bot, boolean traceMode) {
@@ -104,7 +104,7 @@ public class TestAB {
           response = response.replace("&lt;", "<");
         while (response.contains("&gt;"))
           response = response.replace("&gt;", ">");
-        testOutput.writeLine("Robot: " + response);
+        testOutput.writeLine(MagicStrings.robot_name + ": " + response);
       }
       textLine = testInput.readLine();
 
@@ -156,7 +156,7 @@ public class TestAB {
         System.out.println("Human: " + strLine);
 
         String response = chatSession.multisentenceRespond(strLine);
-        System.out.println("Robot: " + response);
+        System.out.println(MagicStrings.robot_name + ": " + response);
       }
     } catch (Exception ex) {
       ex.printStackTrace();
