@@ -37,7 +37,6 @@ import org.alicebot.ab.Verbs;
 public class Main {
 
   public static void main(String[] args) {
-
     MagicStrings.setRootPath();
 
     AIMLProcessor.extension = new PCAIMLProcessorExtension();
@@ -129,8 +128,7 @@ public class Main {
   public static void getGloss(Bot bot, String filename) {
     System.out.println("getGloss");
     try {
-      // Open the file that is the first
-      // command line parameter
+      // Open the file that is the first command line parameter
       File file = new File(filename);
       if (file.exists()) {
         FileInputStream fstream = new FileInputStream(filename);
@@ -205,7 +203,6 @@ public class Main {
         if ((node = bot.brain.findNode(c)) != null)
           node.category.setTemplate(node.category.getTemplate() + "," + gloss);
         bot.brain.addCategory(c);
-
       }
     } catch (Exception ex) {
       ex.printStackTrace();
@@ -217,15 +214,16 @@ public class Main {
     try {
       FileInputStream fstream = new FileInputStream(filename);
       // Get the object
-      BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
-      String strLine;
-      // Read File Line By Line
-      int count = 0;
-      while ((strLine = br.readLine()) != null && count++ < limit) {
-        System.out.println("Human: " + strLine);
+      try (BufferedReader br = new BufferedReader(new InputStreamReader(fstream))) {
+        String strLine;
+        // Read File Line By Line
+        int count = 0;
+        while ((strLine = br.readLine()) != null && count++ < limit) {
+          System.out.println("Human: " + strLine);
 
-        String response = chatSession.multisentenceRespond(strLine);
-        System.out.println(MagicStrings.robot_name + ": " + response);
+          String response = chatSession.multisentenceRespond(strLine);
+          System.out.println(MagicStrings.robot_name + ": " + response);
+        }
       }
     } catch (Exception ex) {
       ex.printStackTrace();
