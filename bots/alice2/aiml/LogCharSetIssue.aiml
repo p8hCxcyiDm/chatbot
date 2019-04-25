@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<aiml version="2.0">
+<topic name="LOG CHAR SET ISSUE"> 
+  <category>
+	<pattern>SPECIAL CHARACTER</pattern>
+    <template><star/>do you mean like Ã¤?</template>
+  </category>
+</topic> 
+</aiml> 
