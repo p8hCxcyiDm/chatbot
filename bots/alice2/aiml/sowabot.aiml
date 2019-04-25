@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<aiml>
- <category>
-	<pattern>SPECIAL CHARACTERX</pattern>
-    <template>do you mean like é?</template>
-  </category>
-</aiml>

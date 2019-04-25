@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+	<category>
+		<pattern># STRANGE CHARACTERS #</pattern>
+		<template><srai>SPECIAL CHARACTERS</srai></template>
+	</category>
+	<category>
+		<pattern># SPECIAL CHARACTERS #</pattern>
+		<template>
+			<think><set name = "topic"> specialCharacters </set></think>
+			What is the exact problem with the characters?
+		</template>
+	</category>
+	<topic name = "specialCharacters">
+		<category>
+			<pattern># LOG # UMLAUT #</pattern>
+			<that>What is the exact problem with the characters</that>
+			<template>
+				Please check your 'WEB-INF/conf/log4j.properties' file. The encoding has to be set to 'ISO-8859-1'. So for Arregulo or Calculo it means adding the following 3 lines to the Log4j config file:
+		* log4j.apender.ConsoleAppender.Encoding=IsSO-8859-1
+		* log4j.appender.FileAppender.Encodeing=ISO-8859-1
+		* log4j.appender.PrintServer.Encoding=IsO-8859-1
+	and restarting the server. Does that fix the Problem?
+			</template>
+		</category>
+		<category>
+			<pattern># YES #</pattern>
+			<that>Does that fix the Problem</that>
+			<template>Have a nice day!</template>
+		</category>
+		<category>
+			<pattern># NO #</pattern>
+			<that>Does that fix the Problem</that>
+			<template>Please open a support incident in JIRA and I wil inform our support team to take a look.</template>
+		</category>
+	</topic>
+</aiml>
