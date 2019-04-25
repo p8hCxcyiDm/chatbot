@@ -40,7 +40,17 @@ public class Main {
     MagicStrings.setRootPath();
 
     AIMLProcessor.extension = new PCAIMLProcessorExtension();
+    regenerateTmpFiles();
     mainFunction(args);
+  }
+
+  /**
+   * Create all temporary files, which are read while running. This is nesseary because the bot
+   *  reads only those files and if aiml files are changed the csv files are outdated.
+   */
+  private static void regenerateTmpFiles() {
+    Bot bot = new Bot("botName", MagicStrings.root_path, "aiml2csv");
+    convert(bot, "aiml2csv");
   }
 
   public static void mainFunction(String[] args) {
