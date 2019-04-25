@@ -1283,6 +1283,7 @@ neighbor's.</template>
 <li>Hi how are you?</li>
 <li>Hi!  I can really feel your smile today.</li>
 <li>Hi! It's delightful to see you.</li>
+<li>Hi, I am Sowabot. How can I help you?</li>
 </random></template>
 </category>
 <category><pattern>YAY</pattern>

@@ -1,9 +1,15 @@
 package org.alicebot.ab;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import org.alicebot.ab.utils.IOUtils;
 import org.alicebot.ab.utils.JapaneseUtils;
-
-import java.io.*;
 
 /*
  * Program AB Reference AIML 2.0 implementation Copyright (C) 2013 ALICE A.I. Foundation Contact: info@alicebot.org
@@ -27,14 +33,14 @@ public class Chat {
 
   public String customerId = MagicStrings.default_Customer_id;
 
-  public History<History> thatHistory = new History<History>("that");
+  public History<History<String>> thatHistory = new History<>("that");
 
-  public History<String> requestHistory = new History<String>("request");
+  public History<String> requestHistory = new History<>("request");
 
-  public History<String> responseHistory = new History<String>("response");
+  public History<String> responseHistory = new History<>("response");
 
   // public History<String> repetitionHistory = new History<String>("repetition");
-  public History<String> inputHistory = new History<String>("input");
+  public History<String> inputHistory = new History<>("input");
 
   public Predicates predicates = new Predicates();
 
@@ -67,6 +73,8 @@ public class Chat {
    * 
    * @param bot
    *          bot to chat with
+   * @param doWrites
+   *          flag if write learned categories
    * @param customerId
    *          unique customer identifier
    */
@@ -172,7 +180,7 @@ public class Chat {
    *          history of "that" values for this request/response interaction
    * @return bot's reply
    */
-  String respond(String input, String that, String topic, History contextThatHistory) {
+  String respond(String input, String that, String topic, History<String> contextThatHistory) {
     // MagicBooleans.trace("chat.respond(input: " + input + ", that: " + that + ", topic: " + topic + ", contextThatHistory: " +
     // contextThatHistory + ")");
     boolean repetition = true;
@@ -221,7 +229,7 @@ public class Chat {
    * @return bot's reply
    */
   String respond(String input, History<String> contextThatHistory) {
-    History hist = thatHistory.get(0);
+    History<String> hist = thatHistory.get(0);
     String that;
     if (hist == null)
       that = MagicStrings.default_that;
@@ -235,10 +243,9 @@ public class Chat {
    *
    * @param request
    *          client's multiple-sentence input
-   * @return
+   * @return response
    */
   public String multisentenceRespond(String request) {
-
     // MagicBooleans.trace("chat.multisentenceRespond(request: " + request + ")");
     String response = "";
     matchTrace = "";

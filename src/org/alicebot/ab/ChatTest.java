@@ -16,7 +16,7 @@ public class ChatTest {
       { "I am steve and am 43", "Steve" }, { "What time is it?", "The time is" },
       { "Play some music", "Now loading your choice of music" }, { "Who is she?", "She is who" },
       { "What do you know about me?", "age: 43" }, { "Play me a song by Elvis Presley", "Now loading your choice of music" },
-      { "what is 5+2-1*3", "4.0" }, { "Peter is taller than Sue but shorter than Harry", "Harry" },
+      { "what is 5+2-1*3", "4" }, { "Peter is taller than Sue but shorter than Harry", "Harry" },
       { "Who is shorter than Harry", "Peter, Sue" }, { "is sue taller than Harry", "No" },
 
       { "Janet reads books", "Why does she read it?" }, { "What does she do?", "She reads books" },
