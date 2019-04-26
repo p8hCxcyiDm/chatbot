@@ -38,7 +38,8 @@ public class Sraix {
       response = sraixPandorabots(input, chatSession, host, botid);
     } else
       response = sraixPannous(input, hint, chatSession);
-    System.out.println("Sraix: response = " + response + " defaultResponse = " + defaultResponse);
+    if (MagicBooleans.trace_mode)
+      System.out.println("Sraix: response = " + response + " defaultResponse = " + defaultResponse);
     if (response.equals(MagicStrings.sraix_failed)) {
       if (chatSession != null && defaultResponse == null)
         response = AIMLProcessor.respond(MagicStrings.sraix_failed, "nothing", "nothing", chatSession);
@@ -265,7 +266,8 @@ public class Sraix {
   } // sraixPannous
 
   public static void log(String pattern, String template) {
-    System.out.println("Logging " + pattern);
+    if (MagicBooleans.trace_mode)
+      System.out.println("Logging " + pattern);
     template = template.trim();
     if (MagicBooleans.cache_sraix)
       try {
