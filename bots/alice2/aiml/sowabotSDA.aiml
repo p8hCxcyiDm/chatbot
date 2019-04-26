@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
 	<category>
-		<pattern># I AM _ SPECIAL CHARACTERS #</pattern>
+		<pattern># <set>name</set> SPECIAL CHARACTERS #</pattern>
 		<template>
-			<srai>I AM <star index = "2"/> STRANGE CHARACTERS</srai>
+			<srai><star index = "2"/> STRANGE CHARACTERS</srai>
 		</template>
 	</category>
 	<category>
-		<pattern># I AM _ STRANGE CHARACTERS #</pattern>
+		<pattern># <set>name</set> STRANGE CHARACTERS #</pattern>
 		<template>
 			<think><set name = "username"> <star index = "2"/></set></think>
 			<think><set name = "topic"> specialCharacters </set></think>
