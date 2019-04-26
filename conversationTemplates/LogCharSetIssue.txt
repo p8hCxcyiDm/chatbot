@@ -1,1 +1,16 @@
-Human: Hi, I am having a problem with some special characters
+//logCharsetIssues
+Hi I'm Casey and I am having a problem with some special characters
+The log contains a bad umlaut
+No, I still have this issue
+
+//sowabotMDR
+Sowabot I can not start the server
+wait a minute
+I see error with database calculoDZLUGGX requested by the login
+oops it is misspelled
+Thanks bye
+
+//bugCode
+I got an error REP4009 what does that mean?
+Yes, i did
+I do not understand what it means
