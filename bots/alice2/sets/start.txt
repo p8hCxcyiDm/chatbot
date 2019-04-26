@@ -1,0 +1,4 @@
+can not start
+does not start
+fails to start
+crashes on start
