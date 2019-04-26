@@ -25,7 +25,7 @@
 
  <category>
 	<pattern>I WORK AT *</pattern>
-    <template>It's nice to hear from a <star/> employe.
+    <template>It's nice to hear from a <star/> employee.
     	<think><set name="company"><star/></set></think>
     </template>
   </category>  
@@ -36,7 +36,24 @@
     	<think><set name="product"><star/></set></think>
     </template>
   </category>
-  
+
+ <category>
+	<pattern>I AM EXECUTING A * WORKFLOW, BUT IT FAILS</pattern>
+    <template><srai>EXECUTE WORKFLOW <star/></srai></template>
+  </category>
+
+ <category>
+	<pattern>EXECUTE WORKFLOW *</pattern>
+    <template>You are executing workflow <star/>.
+    	<think><set name="workflow"><star/></set></think>
+    </template>
+  </category>
+
+ <category>
+	<pattern>IT FAILS</pattern>
+    <template>Set the Log Level to Debug and rerun the workflow.</template>
+  </category>
+
  <category>
 	<pattern>NO INFO IN BAM</pattern>
     <template>Set the Log Level to Debug and rerun the workflow.</template>
