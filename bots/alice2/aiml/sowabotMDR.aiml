@@ -3,7 +3,7 @@
 
 	<category>
 		<pattern># NOT START _ SERVER #</pattern>
-		<template><set name = "topic">configurations</set>Can you check in the Arregulo-arregulo.log under WEB-INF/log for any ERROR messages?</template>
+		<template><think><set name = "topic">configurations</set></think>Can you check in the Arregulo-arregulo.log under WEB-INF/log for any ERROR messages?</template>
 	</category>
 	<category>
 		<pattern># WAIT #</pattern>
