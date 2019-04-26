@@ -14,3 +14,19 @@ Thanks bye
 I got an error REP4009 what does that mean?
 Yes, i did
 I do not understand what it means
+
+//general scenario
+Hi
+What time is it
+I am bored
+Or you can tell me a joke
+You are smart
+I don't care
+Where do you live
+what is the capital of south africa
+bye
+
+//show patterns complexity
+Hi, I am John from Unicredit and have a problem with in Calculo
+
+Hi, my name is John. I'm from Unicredit. I have a problem with Calculo.
