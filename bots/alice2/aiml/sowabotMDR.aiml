@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+
+	<category>
+		<pattern># NOT START _ SERVER #</pattern>
+		<template><set name = "topic">configurations</set>Can you check in the Arregulo-arregulo.log under WEB-INF/log for any ERROR messages?</template>
+	</category>
+	<category>
+		<pattern># WAIT #</pattern>
+		<template>Sure I am waiting?</template>
+	</category>
+<topic name = "configurations">
+	<category>
+		<pattern># ERROR WITH DATABASE * REQUESTED BY THE LOGIN</pattern>
+		<template>Is your DB name <star index = "2"/>? Is it possible that it is misspelled?</template>
+	</category>
+	<category>
+		<pattern># YES #</pattern>
+		<template><srai>MISSPELLED</srai></template>
+	</category>
+	<category>
+		<pattern># NO #</pattern>
+		<template><srai>NOT MISSPELLED</srai></template>
+	</category>
+	<category>
+			<pattern># MISSPELLED</pattern>
+			<template>In that case check ApplicationConfig.properties file in Arregulo\WEB-INF\conf, find the spot where the DB name is misspelled and adjust it.
+			</template>
+		</category>
+	<category>
+			<pattern># NOT MISSPELLED</pattern>
+			<template>please open a support incident in JIRA and I will inform our support team to take a look.</template>
+	</category>
+</topic>
+</aiml>
