@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
 	<category>
-		<pattern># STRANGE CHARACTERS #</pattern>
-		<template><srai>SPECIAL CHARACTERS</srai></template>
+		<pattern># I AM _ SPECIAL CHARACTERS #</pattern>
+		<template>
+			<srai>I AM <star index = "2"/> STRANGE CHARACTERS</srai>
+		</template>
 	</category>
 	<category>
-		<pattern># SPECIAL CHARACTERS #</pattern>
+		<pattern># I AM _ STRANGE CHARACTERS #</pattern>
 		<template>
+			<think><set name = "username"> <star index = "2"/></set></think>
 			<think><set name = "topic"> specialCharacters </set></think>
 			What is the exact problem with the characters?
 		</template>
@@ -26,12 +29,19 @@
 		<category>
 			<pattern># YES #</pattern>
 			<that>Does that fix the Problem</that>
-			<template>Have a nice day!</template>
+			<template>
+				<random>
+					<li>Have a nice day <get name = "username"></get>!</li>
+					<li>Farewell <get name = "username"></get>!</li>
+					<li>Good. Take care <get name = "username"></get>!</li>
+				</random>
+				
+			</template>
 		</category>
 		<category>
 			<pattern># NO #</pattern>
 			<that>Does that fix the Problem</that>
-			<template>Please open a support incident in JIRA and I wil inform our support team to take a look.</template>
+			<template><get name = "username"></get>, please open a support incident in JIRA and I wil inform our support team to take a look.</template>
 		</category>
 	</topic>
 </aiml>
