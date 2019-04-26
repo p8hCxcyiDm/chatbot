@@ -25,7 +25,7 @@
 
  <category>
 	<pattern>I WORK AT *</pattern>
-    <template>You are working at <star/>.
+    <template>It's nice to hear from a <star/> employe.
     	<think><set name="company"><star/></set></think>
     </template>
   </category>  
