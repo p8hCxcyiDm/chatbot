@@ -1,21 +1,20 @@
 package org.alicebot.ab.utils;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.net.URI;
+import java.net.URLEncoder;
+import java.util.Enumeration;
+
+import org.alicebot.ab.MagicBooleans;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.BasicHttpParams;
-import org.apache.http.params.HttpConnectionParams;
-import org.apache.http.params.HttpParams;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.*;
-import java.util.Enumeration;
 
 public class NetworkUtils {
 
@@ -135,7 +134,8 @@ public class NetworkUtils {
     } catch (Exception ex) {
       ex.printStackTrace();
     }
-    System.out.println(spec);
+    if (MagicBooleans.trace_mode)
+      System.out.println(spec);
     return spec;
   }
 
