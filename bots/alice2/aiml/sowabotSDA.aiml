@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml>
 	<category>
-		<pattern># <set>name</set> SPECIAL CHARACTERS #</pattern>
+		<pattern># <set>name</set> # SPECIAL CHARACTERS #</pattern>
 		<template>
 			<srai><star index = "2"/> STRANGE CHARACTERS</srai>
 		</template>
 	</category>
 	<category>
-		<pattern># <set>name</set> STRANGE CHARACTERS #</pattern>
+		<pattern># <set>name</set> # STRANGE CHARACTERS #</pattern>
 		<template>
 			<think><set name = "username"> <star index = "2"/></set></think>
 			<think><set name = "topic"> specialCharacters </set></think>
@@ -44,4 +44,8 @@
 			<template><get name = "username"></get>, please open a support incident in JIRA and I wil inform our support team to take a look.</template>
 		</category>
 	</topic>
+	<category>
+		<pattern># <set>bugCode</set> #</pattern>
+		<template>That is a arregulo bug code there.</template>
+	</category>
 </aiml>
