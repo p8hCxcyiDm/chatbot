@@ -2,28 +2,33 @@
 <aiml>
 
 	<category>
-		<pattern>Sowabot I can not start the SERVER</pattern>
-		<template><set name = "topic">configurations</set>
-		Can you check in the Arregulo-arregulo.log under WEB-INF/log for any ERROR messages?</template>
+		<pattern># NOT START _ SERVER #</pattern>
+		<template><set name = "topic">configurations</set>Can you check in the Arregulo-arregulo.log under WEB-INF/log for any ERROR messages?</template>
 	</category>
 	<category>
-		<pattern># wait #</pattern>
+		<pattern># WAIT #</pattern>
 		<template>Sure I am waiting?</template>
 	</category>
 <topic name = "configurations">
 	<category>
-		<pattern># Error with database * requested by the login</pattern>
+		<pattern># ERROR WITH DATABASE * REQUESTED BY THE LOGIN</pattern>
 		<template>Is your DB name <star index = "2"/>? Is it possible that it is misspelled?</template>
 	</category>
 	<category>
-			<pattern>it is misspelled</pattern>
-			<template>
-			In that case check ApplicationConfig.properties file in Arregulo\WEB-INF\conf, 
-				find the spot where the DB name is misspelled and adjust it.
+		<pattern># YES #</pattern>
+		<template><srai>MISSPELLED</srai></template>
+	</category>
+	<category>
+		<pattern># NO #</pattern>
+		<template><srai>NOT MISSPELLED</srai></template>
+	</category>
+	<category>
+			<pattern># MISSPELLED</pattern>
+			<template>In that case check ApplicationConfig.properties file in Arregulo\WEB-INF\conf, find the spot where the DB name is misspelled and adjust it.
 			</template>
 		</category>
 	<category>
-			<pattern>it is not misspelled</pattern>
+			<pattern># NOT MISSPELLED</pattern>
 			<template>please open a support incident in JIRA and I will inform our support team to take a look.</template>
 	</category>
 </topic>
