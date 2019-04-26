@@ -41,9 +41,12 @@ public class Main {
 
     AIMLProcessor.extension = new PCAIMLProcessorExtension();
 
+    System.out.println("Hi, I'm the chatbot of Sowatec, how can i help you?");
     // generate CSV files
-    String[] generateArgs = { "action=aiml2csv", "trace=false" };
-    mainFunction(generateArgs);
+    if(MagicBooleans.development_mode) {
+      String[] generateArgs = { "action=aiml2csv", "trace=false" };
+      mainFunction(generateArgs);
+    }
 
     mainFunction(args);
   }
@@ -51,9 +54,11 @@ public class Main {
   public static void mainFunction(String[] args) {
     String botName = "alice2";
     MagicBooleans.jp_tokenize = false;
-    MagicBooleans.trace_mode = true;
+    MagicBooleans.trace_mode = MagicBooleans.development_mode;
     String action = "chat";
-    System.out.println(MagicStrings.program_name_version);
+    if(MagicBooleans.development_mode) {
+      System.out.println(MagicStrings.program_name_version);
+    }
     for (String s : args) {
       // System.out.println(s);
       String[] splitArg = s.split("=");

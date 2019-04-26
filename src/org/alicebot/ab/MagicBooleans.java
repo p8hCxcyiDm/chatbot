@@ -33,6 +33,8 @@ public class MagicBooleans {
   public static boolean qa_test_mode = false;
 
   public static boolean make_verbs_sets_maps = false;
+  
+  public static boolean development_mode = true;
 
   public static void trace(String traceString) {
     if (trace_mode) {
